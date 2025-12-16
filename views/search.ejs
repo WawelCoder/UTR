@@ -1,0 +1,33 @@
+<h1>Results:</h1>
+<% if (allrecs.length > 0) { %>
+  <% allrecs.forEach((recref, index) => { %>
+    <div class="product" style="max-width: 500px;">
+      <form action="/catalog/add" method="post">
+        <input type="hidden" name="listing_id" value="<%= recref.listing_id %>">
+        <div class="product-details">
+          <p><strong><%= recref.user_id %></strong></p>
+          <p><%= recref.title %></p>
+          <p><%= recref.author %></p>
+          <p><%= recref.isbn %></p>
+          <p><%= recref.description %></p>
+          <p><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.price) %></p>
+          <p><%= recref.item_condition %></p>
+          <p><%= recref.date_posted.toLocaleDateString('en-US') %></p>
+          <a href='/listings/<%= recref.listing_id %>/show' class="details-link">Details</a>
+        </div><br>
+        <div class="add-to-cart">
+          <label for="qty">Quantity:</label>
+          <select name="qty" id="qty" style="width: 100px;" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <button type="submit" class="button">Add to Cart</button>
+        </div>
+      </form>
+    </div>
+  <% }); %>
+<% } else { %>
+  <p>Search criteria did not match any listings.</p>
+<% } %>

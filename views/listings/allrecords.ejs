@@ -1,0 +1,39 @@
+<% if (allrecs.length> 0) {%>
+    <table border="1">
+        <tr>
+            <th>Listing ID</th>
+            <th>User ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Item Condition</th>
+            <th>Date Posted</th>
+            <th>Category</th>
+            <th>Homepage</th>
+            <th colspan="3" style="text-align: center;">Actions</th>
+        </tr>    
+        <% allrecs.forEach((recref, index)=> { %>
+            <tr>
+                <td><%= recref.listing_id %></td>
+                <td><%= recref.user_id %></td>
+                <td><%= recref.title %></td>
+                <td><%= recref.author %></td>
+                <td><%= recref.isbn %></td>
+                <td><%= recref.description %></td>
+                <td class="Money"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.price) %></td>
+                <td><%= recref.item_condition %></td>
+                <td><%= recref.date_posted.toLocaleDateString('en-US') %></td>
+                <td> <%= recref.category_id %></td>
+                <td><%= recref.homepage %></td>
+                <td><a href='/listings/<%= recref.listing_id %>/show' class="LinkMagic">Details</a></td>
+                <td><a href='/listings/<%= recref.listing_id %>/edit' class="LinkMagic">Edit</a></td>
+                <td><a href='/listings/<%= recref.listing_id %>/delete' onclick="return confirm('Are you sure you want to delete this record?');" class="LinkMagic">Delete</a></td>
+            </tr>
+<% }); %>
+</table>
+<% } else { %>
+    <p>No Records Available</p>
+<% } %>
+<p> <a href='/listings/addrecord' class="LinkMagic">Add New</a>

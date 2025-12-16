@@ -1,0 +1,31 @@
+<h1>Edit Sale Record</h1>
+<form action="/saleorder/save" method="post">
+    <input type="hidden" name="order_id" value="<%= onerec.order_id %>">
+    <table>
+        <tr>
+            <td>Buyer User ID:</td>
+            <td><input type="number" name="buyer_user_id" value="<%= onerec.buyer_user_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Sale Date:</td>
+            <td><input type="date" name="sale_date" value="<%= onerec.sale_date.toISOString().split('T')[0] %>" required></td>
+        </tr>
+        <tr> 
+            <td>Customer Notes:</td>
+            <td><textarea name="customernotes" rows="5" cols="30" placeholder="Customer Notes"><%= onerec.customernotes %></textarea></td>
+        </tr>
+        <tr>
+            <td>Payment Status:</td>
+            <td><select name="payment_status" required>
+                <option selected><%= onerec.payment_status %></option>
+                <option>Paid</option>
+                <option>Pending</option>
+                <option>Fully Paid</option></select></td>
+        </tr>
+        <tr>
+            <td>Authorization Number:</td>
+            <td><input type="text" name="authorization_num" value="<%= onerec.authorization_num %>" required></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>

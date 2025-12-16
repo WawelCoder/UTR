@@ -1,0 +1,11 @@
+<h1>Shipment Details</h1>
+<table>
+    <tr> <th> Field </th> <th> Value </th> </tr>
+    <tr> <td> Shipment ID: </td> <td> <%= onerec.shipment_id %> </td> </tr>
+    <tr> <td> Order ID: </td> <td> <%= onerec.order_id %> </td> </tr>
+    <tr> <td> Shipper Name: </td> <td> <%= onerec.shipper_name %> </td> </tr>
+    <tr> <td> Shipper Contact: </td> <td> <%= onerec.shipper_contact %> </td> </tr>
+    <tr> <td> Shipment Date: </td> <td> <%= onerec.shipment_date.toLocaleDateString('en-US') %> </td> </tr>
+    <tr> <td> Tracking Number: </td> <td> <%= onerec.tracking_number %> </td> </tr>
+    <tr> <td> Status: </td> <td> <%= onerec.status %> </td> </tr>
+</table>

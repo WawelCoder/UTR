@@ -1,0 +1,46 @@
+<% var totprice = 0 %>
+<% var totqty = 0 %>
+<% var lineitemcost = 0 %>
+<% if (cartitems != '0') {%>
+<h1> Cart: </h1>
+<table border=1>
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>ISBN</th>
+<th>Item Condition</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Line Cost</th>
+<th>Action</th>
+</tr>
+<% cartitems.forEach((item, index) => { %>
+<tr>
+<td><%= item.title %></td>
+<td><%= item.author%></td>
+<td><%= item.isbn %></td>
+<td><%= item.item_condition %></td>
+<td class="Money"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.price) %></td>
+<% totqty = totqty + parseInt(qtys[index]) %>
+<% lineitemcost = item.price * parseInt(qtys[index]) %>
+<td><%= qtys[index] %> </td>
+<td class="Money"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(lineitemcost) %> </td>
+<% totprice = totprice + lineitemcost %>
+<td>
+<form action="/catalog/remove" method="post" >
+<input type="hidden" name="listing_id" value=<%= item.listing_id %> >
+<button type="submit">Remove</button>
+</form>
+</td>
+</tr>
+<% }); %>
+<tr bgcolor="lightgray">
+<td colspan="5"><b>Totals</b></td>
+<td><%= totqty %></td>
+<td class="Money"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totprice) %></td>
+<td><button class='button' onclick="window.location.href='/catalog/checkout'">Checkout</button></td>
+</tr>
+</table>
+<% } else { %>
+<p>Cart Is Empty</p>
+<% } %>

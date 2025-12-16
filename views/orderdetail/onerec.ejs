@@ -1,0 +1,10 @@
+<h1>Order Details</h1>
+<table>
+    <tr> <th> Field </th> <th> Value </th> </tr>
+    <tr> <td> Order Details ID: </td> <td> <%= onerec.orderdetail_id %> </td> </tr>
+    <tr> <td> Order ID: </td> <td> <%= onerec.order_id %> </td> </tr>
+    <tr> <td> Listing ID: </td> <td> <%= onerec.listing_id %> </td> </tr>
+    <tr> <td> Sale Price: </td> <td> <%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(onerec.sale_price) %> </td> </tr>
+    <tr> <td> Payment Status: </td> <td> <%= onerec.quantity %> </td> </tr>
+</table>
+

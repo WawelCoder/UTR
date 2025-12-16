@@ -1,0 +1,24 @@
+<h1>Edit Order Record</h1>
+<form action="/orderdetail/save" method="post">
+    <input type="hidden" name="orderdetail_id" value="<%= onerec.orderdetail_id %>">
+    <table>
+        <tr>
+            <td>Order ID:</td>
+            <td><input type="number" name="order_id" value="<%= onerec.order_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Listing ID:</td>
+            <td><input type="number" name="listing_id" value="<%= onerec.listing_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Sale Price:</td>
+            <td><input type="text" name="sale_price" pattern="\d+(\.\d{2})?" placeholder="Enter a decimal number (e.g., 10.50)" style="width: 350px;" value="<%= onerec.sale_price %>" required></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><input type="number" name="quantity" value="<%= onerec.quantity %>" required></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>
+

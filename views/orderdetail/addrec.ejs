@@ -1,0 +1,23 @@
+<h1>New Order Record</h1>
+<form action="/orderdetail" method="post">
+    <table>
+        <tr>
+            <td>Order ID:</td>
+            <td><input type="number" name="order_id" required></td>
+        </tr>
+        <tr>
+            <td>Listing ID:</td>
+            <td><input type="number" name="listing_id" required></td>
+        </tr>
+        <tr>
+            <td>Sale Price:</td>
+            <td><input type="text" name="sale_price" pattern="\d+(\.\d{2})?" placeholder="Enter a decimal number (e.g., 10.50)" style="width: 350px;" required></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><input type="number" name="quantity" required></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>
+

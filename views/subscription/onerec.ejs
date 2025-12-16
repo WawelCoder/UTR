@@ -1,0 +1,10 @@
+<h1>Subscription Details</h1>
+<table>
+    <tr> <th> Field </th> <th> Value </th> </tr>
+    <tr> <td> Subscription ID: </td> <td> <%= onerec.subscription_id %> </td> </tr>
+    <tr> <td> User ID: </td> <td> <%= onerec.user_id %> </td> </tr>
+    <tr> <td> Category ID: </td> <td> <%= onerec.category_id %> </td> </tr>
+    <tr> <td> Subscribe Date: </td> <td> <%= onerec.subscribe_date.toLocaleDateString('en-US') %> </td> </tr>
+    <tr> <td> Unsubscribe Date: </td> <td><%= onerec.unsubscribe_date instanceof Date && !isNaN(onerec.unsubscribe_date) ? onerec.unsubscribe_date.toLocaleDateString('en-US') : '' %></td> </tr>
+</table>
+

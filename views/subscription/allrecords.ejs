@@ -1,0 +1,28 @@
+<% if (allrecs.length> 0) {%>
+    <table border="1">
+        <tr>
+            <th>Subscription ID</th>
+            <th>User ID:</th>
+            <th>Category ID:</th>
+            <th>Subscribe Date:</th>
+            <th>Unsubscribe Date:</th>
+            <th colspan="3" style="text-align: center;">Actions</th>
+        </tr>    
+        <% allrecs.forEach((recref, index)=> { %>
+            <tr>
+                <td><%= recref.subscription_id %></td>
+                <td><%= recref.user_id %></td>
+                <td><%= recref.category_id %></td>
+                <td><%= recref.subscribe_date.toLocaleDateString('en-US') %></td>
+                <td><%= recref.unsubscribe_date instanceof Date && !isNaN(recref.unsubscribe_date) ? recref.unsubscribe_date.toLocaleDateString('en-US') : '' %></td>
+                <td><a href='/subscription/<%= recref.subscription_id %>/show' class="LinkMagic">Details</a></td>
+                <td><a href='/subscription/<%= recref.subscription_id %>/edit' class="LinkMagic">Edit</a></td>
+                <td><a href='/subscription/<%= recref.subscription_id %>/delete' onclick="return confirm('Are you sure you want to delete this record?');" class="LinkMagic">Delete</a></td>
+            </tr>
+<% }); %>
+</table>
+<% } else { %>
+    <p>No Records Available</p>
+<% } %>
+<p> <a href='/subscription/addrecord' class="LinkMagic">Add New</a>
+

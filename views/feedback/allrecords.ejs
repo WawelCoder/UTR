@@ -1,0 +1,34 @@
+<% if (allrecs.length> 0) {%>
+    <table border="1">
+        <tr>
+            <th>Feedback ID</th>
+            <th>User ID:</th>
+            <th>Listing ID:</th>
+            <th>Review Date:</th>
+            <th>Comments:</th>
+            <th>Rating:</th>
+            <th>Status:</th>
+            <th colspan="3" style="text-align: center;">Actions</th>
+        </tr>    
+        <% allrecs.forEach((recref, index)=> { %>
+            <tr>
+                <td><%= recref.feedback_id %></td>
+                <td><%= recref.user_id %></td>
+                <td><%= recref.listing_id %></td>
+                <td><%= recref.review_date.toLocaleDateString('en-US') %></td>
+                <td><%= recref.comments %></td>
+                <td><%= recref.rating %></td>
+                <td><%= recref.status %></td>
+                <td><a href='/feedback/<%= recref.feedback_id %>/show' class="LinkMagic">Details</a></td>
+                <td><a href='/feedback/<%= recref.feedback_id %>/edit' class="LinkMagic">Edit</a></td>
+                <td><a href='/feedback/<%= recref.feedback_id %>/delete' class="LinkMagic" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a></td>
+            </tr>
+<% }); %>
+</table>
+<% } else { %>
+    <p>No Records Available</p>
+<% } %>
+<p> <a href='/feedback/addrecord' class="LinkMagic">Add New</a>
+
+
+

@@ -1,0 +1,28 @@
+<% if (allrecs.length> 0) {%>
+    <table border="1">
+        <tr>
+            <th>Order ID</th>
+            <th>Buyer User ID:</th>
+            <th>Sale Date:</th>
+            <th>Customer Notes:</th>
+            <th>Payment Status:</th>
+            <th>Authorization Number:</th>
+            <th>Sale Price:</th>
+        </tr>    
+        <% allrecs.forEach((recref, index)=> { %>
+            <tr>
+                <td><%= recref.order_id %></td>
+                <td><%= recref.buyer_user_id %></td>
+                <td><%= recref.sale_date.toLocaleDateString('en-US') %></td>
+                <td><%= recref.customernotes %></td>
+                <td><%= recref.payment_status %></td>
+                <td><%= recref.authorization_num %></td>
+                <td class="Money"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.sale_price) %></td>
+            </tr>
+<% }); %>
+</table>
+<% } else { %>
+    <p>No Records Available</p>
+<% } %>
+
+

@@ -1,0 +1,29 @@
+<h1>New Sale Record</h1>
+<form action="/saleorder" method="post">
+    <table>
+        <tr>
+            <td>Buyer User ID:</td>
+            <td><input type="number" name="buyer_user_id" required></td>
+        </tr>
+        <tr>
+            <td>Sale Date:</td>
+            <td><input type="date" name="sale_date" required></td>
+        </tr>
+        <tr>
+            <td>Customer Notes:</td>
+            <td><textarea name="customernotes" rows="5" cols="30" placeholder="Customer Notes"></textarea></td>
+        </tr>
+        <tr>
+            <td>Payment Status:</td>
+            <td><select name="payment_status" required>
+                <option>Paid</option>
+                <option>Pending</option>
+                <option>Fully Paid</option></select></td>
+        </tr>
+        <tr>
+            <td>Authorization Number:</td>
+            <td><input type="text" name="authorization_num" required></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>

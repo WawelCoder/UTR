@@ -1,0 +1,68 @@
+<div style="width: 100%;"><title>UniTextResale - Your Smart Textbook Marketplace</title>
+<div style="float: left; width:80%;">
+<header>
+    <h1>Welcome to UniTextResale!</h1>
+    <p>Your Smart Textbook Marketplace!</p>
+</header>
+
+<section>
+    <h2>Key Features</h2>
+    <ul>
+        <li class="n">Save Money on Textbooks: Buy and sell used textbooks directly from fellow students.</li><br>
+        <li class="n">Effortless Exchange: Enjoy a hassle-free user interface for seamless transactions.</li><br>
+        <li class="n">Sustainability Focus: Contribute to a greener environment by reducing the demand for new
+            textbooks.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Start Saving Today!</h2>
+    <p>Buy or Sell Your Textbooks Now.</p>
+</section>
+<h1>Current Listings:</h1>
+<% if (allrecs.length > 0) { %>
+    <% allrecs.forEach((recref, index) => { %>
+      <div class="product" style="max-width: 500px;">
+        <form action="/catalog/add" method="post">
+          <input type="hidden" name="listing_id" value="<%= recref.listing_id %>">
+          <div class="product-details">
+            <p><strong><%= recref.user_id %></strong></p>
+            <p><%= recref.title %></p>
+            <p><%= recref.author %></p>
+            <p><%= recref.isbn %></p>
+            <p><%= recref.description %></p>
+            <p><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.price) %></p>
+            <p><%= recref.item_condition %></p>
+            <p><%= recref.date_posted.toLocaleDateString('en-US') %></p>
+            <a href='/listings/<%= recref.listing_id %>/show' class="details-link">Details</a>
+          </div><br>
+          <div class="add-to-cart">
+            <label for="qty">Quantity:</label>
+            <select name="qty" id="qty" style="width: 100px;" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <button type="submit" class="button"">Add to Cart</button>
+          </div>
+        </form>
+      </div>
+      <% }); %>
+      <% } else { %>
+        <p>No products available at the moment.</p>
+      <% } %> 
+    </div>
+</div>
+    <div style="float: right; width:20%;">
+       <% promos.forEach((recref, index) => { %>
+            <figure> <img src="images/<%= recref.promoimage %>" width="100%" height="100%"> </figure>
+        <% }); %>
+    </div>
+
+
+
+
+</div>
+
+

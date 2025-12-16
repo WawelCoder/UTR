@@ -1,0 +1,36 @@
+<h1>New Feedback Record</h1>
+<form action="/feedback" method="post">
+    <table>
+        <tr>
+            <td>User ID:</td>
+            <td><input type="number" name="user_id" required></td>
+        </tr>
+        <tr>
+            <td>Listing ID:</td>
+            <td><input type="number" name="listing_id" required></td>
+        </tr>
+        <tr>
+            <td>Review Date:</td>
+            <td><input type="date" name="review_date" required></td>
+        </tr>
+        <tr>
+            <td>Comments:</td>
+            <td><textarea name="comments" rows="5" cols="30" placeholder="Enter your comments"></textarea></td>
+        </tr>
+        <tr>
+            <td>Rating:</td>
+            <td><input type="number" name="rating" min="1" max="5" required></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td>
+                <select name="status" required>
+                    <option>Approved</option>
+                    <option>Pending</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>
+

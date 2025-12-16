@@ -1,0 +1,22 @@
+<h1>New Subscription Record</h1>
+<form action="/subscription" method="post">
+    <table>
+        <tr>
+            <td>User ID:</td>
+            <td><input type="number" name="user_id" required></td>
+        </tr>
+        <tr>
+            <td>Category ID:</td>
+            <td><input type="number" name="category_id" required></td>
+        </tr>
+        <tr>
+            <td>Subscribe Date:</td>
+            <td><input type="date" name="subscribe_date" required></td>
+        </tr>
+        <tr>
+            <td>Unsubscribe Date:</td>
+            <td><input type="date" name="unsubscribe_date"></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>

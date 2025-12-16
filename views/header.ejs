@@ -1,0 +1,57 @@
+<table bgcolor='lightgray' width='100%' class="CT">
+    <tr class="CT">
+        <td width='20%' align='left'>
+            <a href="/"><img src="\images\Logo.png" width="110" height="100">
+            </a>
+        </td>
+        <td width='60%' align='center' class="CT">
+            <h1 class="CompanyTitle">UniTextResale</h1>
+        </td>
+        <td width='10%' align='center'>
+            <% if(session.user_id> 0) { %>
+                <b> Hello, <b>
+                        <%= session.custname %>!
+                    </b> </br>
+                    <a href='/users/logout' class="LinkMagic">Logout</a><br><br>
+                    <a href='/users/profile' class="LinkMagic">Update Profile</a><br><br>
+                    <a href='/users/pwdchg' class="LinkMagic">Reset Password</a>
+                    <% } else { %>
+                        <a href='/users/register' class="LinkMagic">New User</a> </br>
+                        <a href='/users/login' class="LinkMagic">Login</a>
+                        <% } %>
+        </td>
+        <td width='10%' align='center'>
+            <a href="/catalog/cart" class="LinkMagic">🛒Cart</a>
+        </td>
+    </tr>
+</table>
+<div style="text-align: right;">
+    <form action="/search" method="get">
+        <label for="SearchControl" style="display: inline-block; margin-left: 20px; margin-top: 10px;">Search: </label>
+        <input type="text" name="searchcriteria" style="display: inline-block; width: 200px; margin-bottom: 10px;">
+        <input type="submit" value="Go" class="button" style="display: inline-block; margin-right: 20px; margin-top: 10px;">
+    </form>
+    <div class="navbar-container">
+        <ul class="normal">
+            <li> <a href="/">Home</a> </li>
+            <li> <a href="/catalog">Catalog</a> </li>
+            <li> <a href="/about">About Us</a> </li>
+            <li> <a href="/contact">Contact Us</a> </li>
+        </ul>
+            <% if(session.isadmin) { %>
+                    <div class="admin-dropdown"">
+                    <button class="dropbtn">Administration</button>
+                     <div class="dropdown-content">
+                        <a href="/users">Users</a>
+                        <a href="/listings">Listing</a>
+                        <a href="/saleorder">Sale Order</a>
+                        <a href="/orderdetail">Order Detail</a>
+                        <a href="/feedback">Feedback</a>
+                        <a href="/shipments">Shipments</a>
+                        <a href="/category">Category</a>
+                        <a href="/subscription">Subscription</a>
+                        <a href="/report">Reports</a>
+            </div>
+        </div>
+         <% } %>
+    </div>

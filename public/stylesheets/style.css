@@ -1,0 +1,302 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1{
+  font-family: Arial, sans-serif;
+  color: rgb(227, 12, 209);
+  }
+  h1.CompanyTitle{
+    font-family: Arial, sans-serif;
+    color: rgb(227, 12, 209);
+    font-size: 32px;
+    }
+  th.CT, td.CT{
+    padding: 12px;
+    text-align: center;
+  }
+  table.CT {
+    width: 100%;
+    margin: 15px 0;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  }
+  img {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  }
+
+  img:hover {
+  border: 1px solid #777;
+  }
+  
+  ul.normal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+    flex-grow: 1;
+    }
+
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: none;
+      }
+
+    li {
+    float: left;
+    }
+
+    li.n {
+      float: none;
+      }
+  
+
+    li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+    background-color: #ddd;
+    }
+
+    li a.active {
+    color: white;
+    background-color: #4CAF50;
+    }
+
+    .button1 {
+      background-color: #008CBA;
+      font-size: 10px;
+      border-radius: 4px;
+      border: 2px solid #4CAF50;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0
+      17px 50px 0 rgba(0,0,0,0.19);
+      }
+      
+      .product {
+        margin: 5px;
+        border: 2px solid #e60abf;
+        background: lightgrey;
+        border-radius: 8px;
+        padding: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+      }
+      
+      .product:hover {
+        transform: scale(1.04);
+      }
+      
+      .product h3 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+      
+      .product p {
+        color: #555;
+        margin: 0;
+      }
+      
+      .product .details-link {
+        color: #e60abf;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+      }
+      
+      .product .details-link:hover {
+        color: #d307af;
+      }
+      .help-header {
+        background-color: rgba(169, 169, 169, 0.80);
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .help-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .help-container h1, .help-container h2, .help-container h3 {
+        color: #333;
+    }
+    .privacy-header {
+      background-color: rgba(169, 169, 169, 0.80);
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+  }
+
+  .privacy-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .privacy-container h1, .privacy-container h2, .privacy-container h3 {
+      color: #333;
+  }
+  table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+td.Money {
+  text-align: right;
+}
+th {
+  background-color: #f5f5f5; /* Light background for header row */
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row background color */
+}
+body.RP {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+h1.RP {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p.RP {
+  margin: 10px 0;
+}
+
+a.RP {
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover.RP {
+  color: #2980b9;
+}
+.button {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px; 
+  cursor: pointer;
+  background-color: #e60abf; 
+  color: #fff; 
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #d307af;
+}
+
+.LinkMagic {
+  color: #e60abf;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  font-size: medium;
+}
+
+.admin-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.dropbtn {
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  color: rgb(102, 102, 102);
+  padding: 14.25px;
+  font-size: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(102, 102, 102);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Hide the admin dropdown for non-admin users */
+.admin-dropdown.hidden {
+  display: none;
+}
+
+.admin-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.admin-dropdown:hover .dropbtn {
+  background-color: #ddd;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%; 
+}

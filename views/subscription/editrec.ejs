@@ -1,0 +1,23 @@
+<h1>Edit Subscription Record</h1>
+<form action="/subscription/save" method="post">
+    <input type="hidden" name="subscription_id" value="<%= onerec.subscription_id %>">
+    <table>
+        <tr>
+            <td>User ID:</td>
+            <td><input type="number" name="user_id" value="<%= onerec.user_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Category ID:</td>
+            <td><input type="number" name="category_id" value="<%= onerec.category_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Subscribe Date:</td>
+            <td><input type="date" name="subscribe_date" value="<%= onerec.subscribe_date.toISOString().split('T')[0] %>" required></td>
+        </tr>
+        <tr>
+            <td>Unsubscribe Date:</td>
+            <td><input type="date" name="unsubscribe_date" value="<%= onerec.unsubscribe_date instanceof Date && !isNaN(onerec.unsubscribe_date) ? onerec.unsubscribe_date.toLocaleDateString('en-US') : '' %>"></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>

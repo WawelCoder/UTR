@@ -1,0 +1,36 @@
+<h1>Edit Shipment Record</h1>
+<form action="/shipments/save" method="post">
+    <input type="hidden" name="shipment_id" value="<%= onerec.shipment_id %>">
+    <table>
+        <tr>
+            <td>Order ID:</td>
+            <td><input type="number" name="order_id" value="<%= onerec.order_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Shipper Name:</td>
+            <td><input type="text" name="shipper_name" value="<%= onerec.shipper_name %>" required></td>
+        </tr>
+        <tr>
+            <td>Shipper Contact:</td>
+            <td><input type="text" name="shipper_contact" value="<%= onerec.shipper_contact %>" required></td>
+        </tr>
+        <tr>
+            <td>Shipment Date:</td>
+            <td><input type="date" name="shipment_date" value="<%= onerec.shipment_date.toISOString().split('T')[0] %>" required></td>
+        </tr>
+        <tr>
+            <td>Tracking Number:</td>
+            <td><input type="text" name="tracking_number" value="<%= onerec.tracking_number %>" required></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td><select name="status" required>
+                <option selected><%= onerec.status %></option>
+                <option>Preparing</option>
+                <option>Shipped</option>
+                <option>Delivered</option></select></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>
+

@@ -1,0 +1,62 @@
+<h1>Edit Listing</h1>
+<form action="/listings/save" method="post">
+    <input type="hidden" name="listing_id" value="<%= onerec.listing_id %>">
+    <table>
+        <tr>
+            <td>User ID:</td>
+            <td><input type="number" name="user_id" value="<%= onerec.user_id %>" required></td>
+        </tr>
+        <tr>
+            <td>Book Title:</td>
+            <td><input type="text" name="title" value="<%= onerec.title %>" required></td>
+        </tr>
+        <tr>
+            <td>Author:</td>
+            <td><input type="text" name="author" value="<%= onerec.author %>" required></td>
+        </tr>
+        <tr>
+            <td>ISBN:</td>
+            <td><input type="text" name="isbn" value="<%= onerec.isbn %>" required></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><textarea name="description" rows="10" cols="30" placeholder="Description"><%= onerec.description %></textarea></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" name="price" value="<%= onerec.price %>" required></td>
+        </tr>
+        <tr>
+            <td>Item Condition:</td>
+            <td><input type="text" name="item_condition" value="<%= onerec.item_condition %>" required></td>
+        </tr>
+        <tr>
+            <td>Date Posted:</td>
+            <td><input type="date" name="date_posted" value="<%= onerec.date_posted.toISOString().split('T')[0] %>" required></td>
+        </tr>
+        <tr>
+            <td>Category ID:</td><td>
+            <select name="category_id" required>
+                <optgroup label="Select Category">
+                    <% for (var i = 0; i < category.length; i++) { %>
+                        <% if (category[i].category_id == onerec.category_id ) { %>
+                            <option selected value=<%= category[i].category_id %>> 
+                                    <%= category[i].category_name %> </option>
+                        <% } else { %>
+                            <option value=<%= category[i].category_id %>> 
+                                <%= category[i].category_name %> </option>
+                    <% } } %>
+                </optgroup>
+            </select>
+        </td> </tr>
+        <tr>
+            <td>Homepage:</td><td>
+                <% if (onerec.homepage) { %>
+                    <input type="checkbox" name="homepage" checked>
+                <% } else {%>
+                    <input type="checkbox" name="homepage">
+                <% } %></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>

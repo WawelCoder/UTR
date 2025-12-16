@@ -1,0 +1,34 @@
+<h1>New Shipment Record</h1>
+<form action="/shipments" method="post">
+    <table>
+        <tr>
+            <td>Order ID:</td>
+            <td><input type="number" name="order_id" required></td>
+        </tr>
+        <tr>
+            <td>Shipper Name:</td>
+            <td><input type="text" name="shipper_name" required></td>
+        </tr>
+        <tr>
+            <td>Shipper Contact:</td>
+            <td><input type="text" name="shipper_contact" required></td>
+        </tr>
+        <tr>
+            <td>Shipment Date:</td>
+            <td><input type="date" name="shipment_date" required></td>
+        </tr>
+        <tr>
+            <td>Tracking Number:</td>
+            <td><input type="text" name="tracking_number" required></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td><select name="status" required>
+                <option>Preparing</option>
+                <option>Shipped</option>
+                <option>Delivered</option></select></td>
+        </tr>
+    </table>
+    <button type="submit" class="button">Save</button>
+</form>
+
